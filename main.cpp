@@ -42,7 +42,80 @@ int main(){
             
         }else{
             //verificar e criar tag
+            int i;
+            string aux1,aux2;
+            //nome da tag
+            for(i = 0;entrada[i]!=':';i++){
+                
+                if(entrada[i]==' '){
+                    cout << "[ERROR]: Não pode haver espaço no nome da tag.";
+                    break;
+                }
+                aux1[i]=entrada[i];
+            }
+            //espaço após dois pontos
+            i++;
+            if(entrada[i]!= ' '){
+                cout << "[ERROR]: Deve haver um espaço entre dois pontos e a expressão da tag.";
+            }else{
+                //expressão da tag
+                char v1=0,v2=0;//variáveis
+                char e1=0,e2=0;//sub-expressões
+                for(i = i++;entrada[i] != '\0';i++){
+                    if(entrada[i] == '.' || entrada[i] == '+'){
+                        if(v1+v2+e1+e2==2){
+                            //operação sobre duas variáveis
+                            if(v1==1 && v2==1){
+                                if(e1==0){e1 = 1;v1=0;v2=0;aux2[i]=entrada[i];
+                                }else if(e2==0){e2=1;v1=0;v2=0;aux2[i]=entrada[i];}
+                                else{
+                                    cout << "[ERROR]: Expressão inválida.";
+                                    break;
+                                }
+                            }else if(e1==1 && e2==1){
+                                //operação sobre duas expressões
+                                e2=0;
+                                aux2[i]=entrada[i];
+                            }else if(v1==1 && e1==1){
+                                //operação sobre uma variável e uma sub-expressão
+                                v1=0;
+                                aux2[i]=entrada[i];
+                            }
+                        }else{
+                            cout << "[ERROR]: Expressão inválida.";
+                            break;
+                        }
+                    }else if(entrada[i] == '*'){
+                        if(entrada[i-1]!=' '){
+                            aux2[i]=entrada[i];
+                        }else{
+                            cout << "[ERROR]: Expressão inválida.";
+                            break;
+                        }
+                    }else{
+                        if(v1==0){v1 = 1;}else if(v2==0){v2=1;}else{
+                            cout << "[ERROR]: Expressão inválida.";
+                            break;
+                        }
+                        aux2[i]=entrada[i];
+                    }
+                }
 
+
+            }
+            //verifica disponibilidade de nome
+            for(int i = 0;i<1000;i++){
+                if(tags[i].getId()==aux1){
+                    cout << "[ERROR]: Nome já utilizado.";
+                    break;
+                }
+            }
+            tag t;
+            t.setId(aux1);
+            t.setExpressao(aux2);
+            int k;
+            for(k = 0;i!=NULL;i++){}
+            tags[k] = t;
         }
     }
     
