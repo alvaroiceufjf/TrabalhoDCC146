@@ -5,9 +5,8 @@
 
 using namespace std;
 
-tag::tag(string id, string expressao){
-    this->id = id;
-    this->expressao = expressao;
+tag::tag(){
+
 }
 
 tag::~tag(){

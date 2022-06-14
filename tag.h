@@ -10,7 +10,7 @@ class tag{
         string id;
         string expressao;
     public:
-        tag(string id, string expressao);
+        tag();
         ~tag();
         string getId();
         string getExpressao();

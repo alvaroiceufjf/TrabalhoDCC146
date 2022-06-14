@@ -1,10 +1,14 @@
 #include <stdio.h>
 #include <iostream>
 #include <string.h>
+#include "tag.cpp"
 
 using namespace std;
 
+
+
 int main(){
+    tag tags[1000];
     string entrada = "  ";
     while(entrada != ":q"){
         cin >> entrada;
@@ -15,7 +19,7 @@ int main(){
 
         }else if(entrada == ":c"){
             //carregar tags de um arquivo
-
+            
         }else if(entrada == ":o"){
             //definir output
             
