@@ -19,6 +19,12 @@ int main(){
 
         }else if(entrada == ":c"){
             //carregar tags de um arquivo
+            FILE *arq;
+            arq = fopen("arquivoTag.txt", "rt"); //abre arquivo no modo leitura (rt)
+            if (arq == nullptr){
+                cout << "[ERROR] Erro na abertura do arquivo de texto";
+                break;
+            }
             
         }else if(entrada == ":o"){
             //definir output
