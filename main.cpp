@@ -9,35 +9,42 @@ using namespace std;
 
 int main(){
     tag tags[1000];
-    string entrada = "  ";
+    string entrada = "";
     while(entrada != ":q"){
         cin >> entrada;
         //menu
         if(entrada == ":d"){
             //dividir arquivo de entrada em tags
-            cout << "[WARNING] Funcao nao implementada";
+            cout << "[WARNING] Funcao nao implementada.";
 
         }else if(entrada == ":c"){
             //carregar tags de um arquivo
             
         }else if(entrada == ":o"){
             //definir output
+            cout << "[WARNING] Funcao nao implementada.";
             
         }else if(entrada == ":p"){
             //dividir entrada em tags
-            cout << "[WARNING] Funcao nao implementada";
+            cout << "[WARNING] Funcao nao implementada.";
 
         }else if(entrada == ":a"){
             //listar autômatos
+            cout << "[WARNING] Funcao nao implementada.";
             
         }else if(entrada == ":l"){
             //listar tags válidas
+            for(int j=0;tags[j].getId()!="";j++){
+                cout << tags[j].getId() <<":"<< tags[j].getExpressao() << endl;
+            }
+            cout << "[INFO] Operação executada com sucesso.";
             
         }else if(entrada == ":s"){
             //salvar tag
             
         }else if(entrada == ":q"){
             //encerrar programa
+            cout << "[INFO] Encerrando programa...";
             break;
             
         }else{
@@ -55,7 +62,6 @@ int main(){
                 i++;
             }
             //espaço após dois pontos
-            i++;
             if(entrada[i]!= ' '){
                 cout << "[ERROR]: Deve haver um espaço entre dois pontos e a expressão da tag.";
             }else{
@@ -119,6 +125,7 @@ int main(){
             int k=0;
             while(tags[k].getId()!=" "){k++;}
             tags[k] = t;
+            cout << "[INFO] Tag Criada.";
         }
     }
     
