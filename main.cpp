@@ -15,6 +15,7 @@ using namespace std;
 int main(){
     tag tags[1000];
     string entrada = "  ";
+    cout << "[INFO] Digite um comando de entrada ou TAG: ";
     while(entrada != ":q"){
         cin >> entrada;
         //menu
