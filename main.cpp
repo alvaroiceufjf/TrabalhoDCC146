@@ -114,7 +114,7 @@ int main(){
             t.setId(aux1);
             t.setExpressao(aux2);
             int k;
-            for(k = 0;i!=NULL;i++){}
+            for(k = 0;tags[i].getId()!=" ";i++){}
             tags[k] = t;
         }
     }

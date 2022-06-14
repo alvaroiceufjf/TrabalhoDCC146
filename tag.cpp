@@ -6,7 +6,8 @@
 using namespace std;
 
 tag::tag(){
-    
+    this->id=" ";
+    this->expressao=" ";
 }
 
 tag::~tag(){
